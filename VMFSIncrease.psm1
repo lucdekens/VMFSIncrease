@@ -112,7 +112,7 @@ function Get-VmfsDatastoreIncrease
 					Datastore = $Datastore.Name
 					CanonicalName = $disk.CanonicalName
 					Model = "$($disk.Vendor.TrimEnd(' ')).$($disk.Model.TrimEnd(' ')).$($disk.Revision.TrimEnd(' '))"
-					DiskSizeGB = $partInfo[0].Layout.Total.BlockSize * $hdPartInfo[0].Layout.Total.Block / 1GB
+					DiskSizeGB = $partInfo[0].Layout.Total.BlockSize * $partInfo[0].Layout.Total.Block / 1GB
 					DiskBlocks = $partInfo[0].Layout.Total.Block
 					DiskBlockMB = $partInfo[0].Layout.Total.BlockSize/1MB
 					AvailableGB = [math]::Round($partMax - $partUsed, 2)
